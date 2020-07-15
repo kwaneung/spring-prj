@@ -10,7 +10,7 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 <!--dataSource 객체 설정 -->
 <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
-<property name="url" value="jdbc:mysql://127.0.0.1:3306/mess?serverTimezone=UTC&amp;useUniCode=yes&amp;characterEncoding=UTF-8" />
+<property name="url" value="jdbc:mysql://172.28.11.137:3306/MESS?serverTimezone=UTC&amp;useUniCode=yes&amp;characterEncoding=UTF-8" />
         <property name="username" value="mess"></property>
         <property name="password" value="mess"></property>
 </bean>  
