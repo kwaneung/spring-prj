@@ -38,7 +38,7 @@
 
 		WHERE
 
-			BID = #{bid}
+			BID = 1
 
 	</select>
 

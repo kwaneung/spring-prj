@@ -44,7 +44,7 @@ public class BoardDAOImpl implements BoardDAO {
 
 	public BoardVO getBoardContent(int bid) throws Exception {
 
-		return sqlSession.selectOne("ccom.portfolio.first.board.boardMapper.getBoardContent", bid);
+		return sqlSession.selectOne("com.portfolio.first.board.boardMapper.getBoardContent", bid);
 
 	}
 

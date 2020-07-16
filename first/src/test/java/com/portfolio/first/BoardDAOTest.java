@@ -52,7 +52,7 @@ public class BoardDAOTest {
 
 	
 
-	@Test 
+	@Test @Ignore
 
 	public void testGetBoardList() throws Exception {
 
@@ -114,7 +114,7 @@ public class BoardDAOTest {
 
 	
 
-	@Test @Ignore 
+	@Test @Ignore
 
 	public void testInsertBoard() throws Exception {
 
@@ -122,9 +122,9 @@ public class BoardDAOTest {
 
 		boardVO.setCate_cd("1");
 
-		boardVO.setTitle("첫번째 게시물 입니다.");
+		boardVO.setTitle("test1");
 
-		boardVO.setContent("첫번째 게시물입니다.");
+		boardVO.setContent("test1");
 
 		boardVO.setTag("1");
 
@@ -160,11 +160,11 @@ public class BoardDAOTest {
 
 		boardVO.setCate_cd("1");
 
-		boardVO.setTitle("첫번째 게시물 입니다-수정 합니다.");
+		boardVO.setTitle("test1-edited");
 
-		boardVO.setContent("첫번째 게시물입니다-수정합니다.");
+		boardVO.setContent("test1-edited");
 
-		boardVO.setTag("1-1");
+		boardVO.setTag("1-edited");
 
 		
 
@@ -186,7 +186,7 @@ public class BoardDAOTest {
 
 	
 
-	@Test   @Ignore
+	@Test @Ignore  
 
 	public void tesDeleteBoard() throws Exception {
 
@@ -210,7 +210,7 @@ public class BoardDAOTest {
 
 
 
-	@Test @Ignore
+	@Test 
 
 	public void testUpdateViewCnt() throws Exception {
 
