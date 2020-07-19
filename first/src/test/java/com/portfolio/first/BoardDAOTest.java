@@ -120,15 +120,15 @@ public class BoardDAOTest {
 
 		BoardVO boardVO = new BoardVO();
 
-		boardVO.setCate_cd("1");
+		boardVO.setCate_cd("3");
 
-		boardVO.setTitle("test1");
+		boardVO.setTitle("세 번째 게시글");
 
-		boardVO.setContent("test1");
+		boardVO.setContent("세 번째 게시글");
 
-		boardVO.setTag("1");
+		boardVO.setTag("3");
 
-		boardVO.setReg_id("1");
+		boardVO.setReg_id("3");
 
 		
 
@@ -216,7 +216,7 @@ public class BoardDAOTest {
 
 		
 
-		int result = boardDAO.updateViewCnt(1);
+		int result = boardDAO.updateViewCnt(3);
 
 		logger.info("\n Update View Count Result \n ");
 
