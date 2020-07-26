@@ -78,11 +78,11 @@ public class BoardDAOTest {
 
 	
 
-	@Test @Ignore
+	@Test
 
 	public void testGetBoardContent() throws Exception {
 
-		BoardVO boardVO = boardDAO.getBoardContent(1);
+		BoardVO boardVO = boardDAO.getBoardContent(3);
 
 		logger.info("\n Board List \n ");
 
@@ -120,15 +120,15 @@ public class BoardDAOTest {
 
 		BoardVO boardVO = new BoardVO();
 
-		boardVO.setCate_cd("3");
+		boardVO.setCate_cd("4");
 
-		boardVO.setTitle("세 번째 게시글");
+		boardVO.setTitle("네 번째 게시글");
 
-		boardVO.setContent("세 번째 게시글");
+		boardVO.setContent("네 번째 게시글");
 
-		boardVO.setTag("3");
+		boardVO.setTag("4");
 
-		boardVO.setReg_id("3");
+		boardVO.setReg_id("4");
 
 		
 
@@ -210,7 +210,7 @@ public class BoardDAOTest {
 
 
 
-	@Test 
+	@Test @Ignore
 
 	public void testUpdateViewCnt() throws Exception {
 
