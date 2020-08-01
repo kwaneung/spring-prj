@@ -1,8 +1,12 @@
 package com.portfolio.first.board.conrtoller;
 
 import javax.inject.Inject;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,6 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.portfolio.first.board.model.BoardVO;
 import com.portfolio.first.board.service.BoardService;
+import com.portfolio.first.error.controller.CommonExceptionAdvice;
 
 @Controller
 @RequestMapping(value = "/board")
@@ -18,6 +23,7 @@ public class BoardController {
 
 	@Inject
 	private BoardService boardService;
+	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 	
 	@RequestMapping(value = "/getBoardList", method = RequestMethod.GET)
 	public String getBoardList(Model model) throws Exception {
@@ -56,9 +62,15 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = "/deleteBoard", method = RequestMethod.GET)
-
 	public String deleteBoard(RedirectAttributes rttr, @RequestParam("bid") int bid) throws Exception {
 		boardService.deleteBoard(bid);
 		return "redirect:/board/getBoardList";
+	}
+	
+	@ExceptionHandler(RuntimeException.class)
+	public String exceptionHandler(Model model, Exception e){
+		logger.info("exception : " + e.getMessage());
+		model.addAttribute("exception", e);
+		return "error/exception";
 	}
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.portfolio.first.board.dao.BoardDAO;
 import com.portfolio.first.board.model.BoardVO;
+import com.portfolio.first.error.controller.NotFoundException;
 
 @Service
 public class BoardServiceImpl implements BoardService{
@@ -29,9 +30,26 @@ public class BoardServiceImpl implements BoardService{
 		boardDAO.updateBoard(boardVO);
 	}
 	
+//	public BoardVO getBoardContent(int bid) throws Exception{
+//		boardDAO.updateViewCnt(bid);
+//		return boardDAO.getBoardContent(bid);
+//	}
+	
+	@Override
 	public BoardVO getBoardContent(int bid) throws Exception{
+		BoardVO boardVO = new BoardVO();
+		    
+
 		boardDAO.updateViewCnt(bid);
-		return boardDAO.getBoardContent(bid);
+	//	boardVO = boardDAO.getBoardContent(bid);
+		try {
+			boardVO.setBid(bid);
+			boardVO.setCate_cd("1111111111111111111111111111111111111");
+			boardDAO.updateBoard(boardVO);
+		} catch (RuntimeException e) {
+			throw new NotFoundException();
+		}
+		return boardVO;
 	}
 	
 	@Override
