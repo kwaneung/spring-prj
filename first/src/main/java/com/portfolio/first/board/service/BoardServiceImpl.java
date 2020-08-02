@@ -49,7 +49,7 @@ public class BoardServiceImpl implements BoardService{
 	//	boardVO = boardDAO.getBoardContent(bid);
 		try {
 			boardVO.setBid(bid);
-			boardVO.setReg_id("asdasdasdasdasdasdasdasdasdasdadasdasdasdasdasdasdasdasdasdasdasdasdasd1111111111111111111111111111111111111");
+			boardVO.setReg_id("장병호 브랜치asdasdasdasdasdasdasdasdasdasdadasdasdasdasdasdasdasdasdasdasdasdasdasd1111111111111111111111111111111111111");
 			boardDAO.updateBoard(boardVO);
 		} catch (RuntimeException e) {
 			throw new NotFoundException();
