@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.portfolio.first.board.common.Pagination;
 import com.portfolio.first.board.error.controller.CommonExceptionAdvice;
 import com.portfolio.first.board.model.BoardVO;
 import com.portfolio.first.board.service.BoardService;
@@ -27,8 +28,17 @@ public class BoardController {
 	private BoardService boardService;
 	
 	@RequestMapping(value = "/getBoardList", method = RequestMethod.GET)
-	public String getBoardList(Model model) throws Exception {
-		model.addAttribute("boardList", boardService.getBoardList());
+	public String getBoardList(Model model
+			, @RequestParam(required = false, defaultValue = "1") int page
+			, @RequestParam(required = false, defaultValue = "1") int range) throws Exception {
+		// 전체 게시글 개
+		int listCnt = boardService.getBoardListCnt();
+		
+		// Pagination 객체 생성
+		Pagination pagination = new Pagination();
+		pagination.pageInfo(page, range, listCnt);
+		model.addAttribute("pagination", pagination);
+		model.addAttribute("boardList", boardService.getBoardList(pagination));
 		return "board/index";
 	}
 	
