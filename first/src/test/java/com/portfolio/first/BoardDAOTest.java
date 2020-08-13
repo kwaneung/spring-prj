@@ -78,7 +78,7 @@ public class BoardDAOTest {
 
 	
 
-	@Test
+	@Test @Ignore
 
 	public void testGetBoardContent() throws Exception {
 
@@ -114,38 +114,35 @@ public class BoardDAOTest {
 
 	
 
-	@Test @Ignore
+	@Test
 
 	public void testInsertBoard() throws Exception {
 
 		BoardVO boardVO = new BoardVO();
 
-		boardVO.setCate_cd("4");
+		boardVO.setCate_cd("1");
 
-		boardVO.setTitle("네 번째 게시글");
+		// boardVO.setTitle("네 번째 게시글");
 
-		boardVO.setContent("네 번째 게시글");
+		// boardVO.setContent("네 번째 게시글");
 
-		boardVO.setTag("4");
+		boardVO.setTag("1");
 
-		boardVO.setReg_id("4");
+		boardVO.setReg_id("1");
 
-		
+		for( int i = 1; i < 1234 ; i++) {
+		    boardVO.setTitle(i + " 번째 게시물 입니다.");
+		    boardVO.setContent(i + " 번째 게시물 입니다.");
+		    int result = boardDAO.insertBoard(boardVO);
 
-		int result = boardDAO.insertBoard(boardVO);
+				logger.info("\n Insert Board Result " +result);
 
-		logger.info("\n Insert Board Result " +result);
-
-		if(result == 1) {
-
-			logger.info("\n 게시물 등록 성공 ");
-
-		} else {
-
-			logger.info("\n 게시물 등록 실패");
-
-		}
-
+				if(result == 1) {
+					logger.info("\n 게시물 등록 성공 ");
+				} else {
+					logger.info("\n 게시물 등록 실패");
+				}
+		  }
 	}
 
 	

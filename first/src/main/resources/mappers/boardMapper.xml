@@ -17,8 +17,7 @@
 			BID, CATE_CD, TITLE, CONTENT, TAG, VIEW_CNT, REG_ID, REG_DT, EDIT_DT
 		FROM
 			TBL_BOARD
-		WHERE
-			BID = #{bid}
+		LIMIT #{startList}, #{listSize}
 	</select>
 	
 	<insert id="insertBoard" parameterType="com.portfolio.first.board.model.BoardVO">
@@ -57,5 +56,12 @@
 		WHERE
 			BID = #{bid}
 	</update>
+	
+	<select id="getBoardListCnt" resultType="int">
+		SELECT
+			count(*) as listCnt
+		FROM
+			TBL_BOARD
+	</select>
 	
 </mapper>
