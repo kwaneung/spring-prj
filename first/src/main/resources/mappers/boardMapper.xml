@@ -10,6 +10,7 @@
 			BID, CATE_CD, TITLE, CONTENT, TAG, VIEW_CNT, REG_ID, REG_DT, EDIT_DT
 		FROM
 			TBL_BOARD
+		LIMIT #{startList}, #{listSize}
 	</select>
 	
 	<select id="getBoardContent" resultType="com.portfolio.first.board.model.BoardVO" parameterType="com.portfolio.first.board.model.BoardVO">
@@ -17,7 +18,8 @@
 			BID, CATE_CD, TITLE, CONTENT, TAG, VIEW_CNT, REG_ID, REG_DT, EDIT_DT
 		FROM
 			TBL_BOARD
-		LIMIT #{startList}, #{listSize}
+		WHERE
+			BID = #{bid}
 	</select>
 	
 	<insert id="insertBoard" parameterType="com.portfolio.first.board.model.BoardVO">

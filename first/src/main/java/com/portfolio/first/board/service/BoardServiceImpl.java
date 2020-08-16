@@ -30,10 +30,28 @@ public class BoardServiceImpl implements BoardService{
 		boardDAO.updateBoard(boardVO);
 	}
 	
+//	@Transactional
+//	public BoardVO getBoardContent(int bid) throws Exception{
+//		boardDAO.updateViewCnt(bid);
+//		return boardDAO.getBoardContent(bid);
+//	}
+	
 	@Transactional
+	@Override
 	public BoardVO getBoardContent(int bid) throws Exception{
+		BoardVO boardVO = new BoardVO();
+		 
 		boardDAO.updateViewCnt(bid);
-		return boardDAO.getBoardContent(bid);
+		boardVO = boardDAO.getBoardContent(bid);        //주석을 풀어 줍니다.
+	//   예외처리 테스트가 끝났으므로 아래 구문은 삭제 하거나 주석 처리 합니다.
+	//    try {
+	//		boardVO.setBid(bid);
+	//		boardVO.setCate_cd("1111111111111111111111111111111111111");
+	//		boardDAO.updateBoard(boardVO);
+	//	} catch (RuntimeException e) {
+	//		throw new NotFoundException();
+	//	}
+		return boardVO;
 	}
 	
 //	@Transactional
