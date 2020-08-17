@@ -12,6 +12,7 @@ import com.portfolio.first.board.common.Search;
 import com.portfolio.first.board.dao.BoardDAO;
 import com.portfolio.first.board.error.controller.NotFoundException;
 import com.portfolio.first.board.model.BoardVO;
+import com.portfolio.first.board.model.ReplyVO;
 
 @Service
 public class BoardServiceImpl implements BoardService{
@@ -63,5 +64,28 @@ public class BoardServiceImpl implements BoardService{
 //			//throw new RuntimeException("RuntimeException occured");
 //		}
 		return boardVO;
+	}
+	
+	/* title : 댓글 
+	 * desc : 조회, 저장, 수정, 삭제 
+	 */
+	@Override
+	public List<ReplyVO> getReplyList(int bid) throws Exception {
+		return boardDAO.getReplyList(bid);
+	}
+
+	@Override
+	public int saveReply(ReplyVO replyVO) throws Exception {
+		return boardDAO.saveReply(replyVO);
+	}
+
+	@Override
+	public int updateReply(ReplyVO replyVO) throws Exception {
+		return boardDAO.updateReply(replyVO);
+	}
+
+	@Override
+	public int deleteReply(int rid) throws Exception {
+		return boardDAO.deleteReply(rid);
 	}
 }

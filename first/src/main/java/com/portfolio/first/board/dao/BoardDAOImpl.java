@@ -15,6 +15,7 @@ import org.springframework.stereotype.Repository;
 import com.portfolio.first.board.common.Pagination;
 import com.portfolio.first.board.common.Search;
 import com.portfolio.first.board.model.BoardVO;
+import com.portfolio.first.board.model.ReplyVO;
 
 
 
@@ -58,4 +59,29 @@ public class BoardDAOImpl implements BoardDAO {
 	public int getBoardListCnt(Search search) throws Exception {
 		return sqlSession.selectOne("com.portfolio.first.board.boardMapper.getBoardListCnt", search);
 	}
+	
+	/* title : 댓글 
+	 * desc : 조회, 저장, 수정, 삭제 
+	 */
+	
+	@Override
+	public List<ReplyVO> getReplyList(int bid) throws Exception {
+		return sqlSession.selectList("com.portfolio.first.board.replyMapper.getReplyList", bid);
+	}
+
+	@Override
+	public int saveReply(ReplyVO replyVO) throws Exception {
+		return sqlSession.insert("com.portfolio.first.board.replyMapper.saveReply", replyVO);
+	}
+
+	@Override
+	public int updateReply(ReplyVO replyVO) throws Exception {
+		return sqlSession.update("com.portfolio.first.board.replyMapper.updateReply", replyVO);
+	}
+
+	@Override
+	public int deleteReply(int rid) throws Exception {
+		return sqlSession.delete("com.portfolio.first.board.replyMapper.deleteReply", rid);
+	}
+
 }

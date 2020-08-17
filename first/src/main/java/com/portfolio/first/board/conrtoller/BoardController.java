@@ -17,6 +17,7 @@ import com.portfolio.first.board.common.Pagination;
 import com.portfolio.first.board.common.Search;
 import com.portfolio.first.board.error.controller.CommonExceptionAdvice;
 import com.portfolio.first.board.model.BoardVO;
+import com.portfolio.first.board.model.ReplyVO;
 import com.portfolio.first.board.service.BoardService;
 
 @Controller
@@ -67,6 +68,7 @@ public class BoardController {
 	@RequestMapping(value = "/getBoardContent", method = RequestMethod.GET)
 	public String getBoardContent(Model model, @RequestParam("bid") int bid) throws Exception {
 		model.addAttribute("boardContent", boardService.getBoardContent(bid));
+		model.addAttribute("replyVO", new ReplyVO());
 		return "board/boardContent";
 	}
 	
@@ -90,4 +92,5 @@ public class BoardController {
 //		model.addAttribute("exception", e);
 //		return "error/exception";
 //	}
+	
 }

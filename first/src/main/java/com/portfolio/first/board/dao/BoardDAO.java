@@ -5,6 +5,7 @@ import java.util.List;
 import com.portfolio.first.board.common.Pagination;
 import com.portfolio.first.board.common.Search;
 import com.portfolio.first.board.model.BoardVO;
+import com.portfolio.first.board.model.ReplyVO;
 
 
 
@@ -17,4 +18,10 @@ public interface BoardDAO {
 	public int deleteBoard(int bid) throws Exception;
 	public int updateViewCnt(int bid) throws Exception;
 	public int getBoardListCnt(Search search) throws Exception;
+	
+	// 댓글 
+	public List<ReplyVO> getReplyList(int bid) throws Exception;
+	public int saveReply(ReplyVO replyVO) throws Exception;
+	public int updateReply(ReplyVO replyVO) throws Exception;
+	public int deleteReply(int rid) throws Exception;
 }
