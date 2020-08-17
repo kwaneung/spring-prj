@@ -10,7 +10,6 @@
 			BID, CATE_CD, TITLE, CONTENT, TAG, VIEW_CNT, REG_ID, REG_DT, EDIT_DT
 		FROM
 			TBL_BOARD
-<<<<<<< HEAD
 		<trim prefix="WHERE" prefixOverrides="AND|OR">
 			<if test="searchType=='title' and keyword != null and keyword != '' ">
 				AND TITLE like CONCAT('%', #{keyword}, '%')
@@ -22,8 +21,6 @@
 				AND reg_id like CONCAT('%', #{keyword}, '%')
 			</if>	
 		</trim>
-=======
->>>>>>> jang
 		LIMIT #{startList}, #{listSize}
 	</select>
 	
@@ -32,7 +29,6 @@
 			count(*) as listCnt
 		FROM
 			TBL_BOARD
-<<<<<<< HEAD
 		<trim prefix="WHERE" prefixOverrides="AND|OR">
 			<if test="keyword != null and keyword != '' ">
 			<if test="searchType=='title'">
@@ -46,9 +42,6 @@
 			</if>
       </if>
 	</trim>
-
-=======
->>>>>>> jang
 	</select>
 	
 	<select id="getBoardContent" resultType="com.portfolio.first.board.model.BoardVO" parameterType="com.portfolio.first.board.model.BoardVO">

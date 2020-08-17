@@ -8,10 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.portfolio.first.board.common.Pagination;
-<<<<<<< HEAD
 import com.portfolio.first.board.common.Search;
-=======
->>>>>>> jang
 import com.portfolio.first.board.dao.BoardDAO;
 import com.portfolio.first.board.error.controller.NotFoundException;
 import com.portfolio.first.board.model.BoardVO;
@@ -22,13 +19,8 @@ public class BoardServiceImpl implements BoardService{
 	@Inject
 	private BoardDAO boardDAO;
 	
-<<<<<<< HEAD
 	public List<BoardVO> getBoardList(Search search) throws Exception {
 		return boardDAO.getBoardList(search);
-=======
-	public List<BoardVO> getBoardList(Pagination pagination) throws Exception {
-		return boardDAO.getBoardList(pagination);
->>>>>>> jang
 	}
 	
 	@Override
@@ -41,13 +33,8 @@ public class BoardServiceImpl implements BoardService{
 	}
 	
 	@Override
-<<<<<<< HEAD
 	public int getBoardListCnt(Search search) throws Exception {
 		return boardDAO.getBoardListCnt(search);
-=======
-	public int getBoardListCnt() throws Exception {
-		return boardDAO.getBoardListCnt();
->>>>>>> jang
 	}
 	
 //	public BoardVO getBoardContent(int bid) throws Exception{

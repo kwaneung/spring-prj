@@ -11,11 +11,11 @@
 		http://www.springframework.org/schema/tx 
 		http://www.springframework.org/schema/tx/spring-tx.xsd">
 	
-	<!-- Transaction 설정 
+	<!-- Transaction 설정 -->
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
  		<property name="dataSource" ref="dataSource"/>
  	</bean>
- 	 	 	-->
+ 	 	 	
  	<!-- Transaction을 위한 AOP 설정 -->
  	<!--  <aop:config proxy-target-class="true">
 		<aop:pointcut id="servicePublicMethod" expression="execution(public * com.portfolio.first.board..*(int))" />
