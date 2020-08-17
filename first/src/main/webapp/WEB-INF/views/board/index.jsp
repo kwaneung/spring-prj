@@ -66,6 +66,7 @@ crossorigin="anonymous">
 		
 		location.href = url;
 	}
+<<<<<<< HEAD
 	// 검색 버튼 처리 이벤트
 	$(document).on('click', '#btnSearch', function(e){
 		e.preventDefault();
@@ -75,6 +76,8 @@ crossorigin="anonymous">
 		location.href = url;
 		console.log(url);
 	});
+=======
+>>>>>>> jang
 
 </script>
 </head>
@@ -146,6 +149,7 @@ crossorigin="anonymous">
 		</ul>
 	</div>
 	<!-- pagination{e} -->
+<<<<<<< HEAD
 	<!-- search{s} -->
 		<div class="form-group row justify-content-center">
 			<div class="w100" style="padding-right:10px">
@@ -163,6 +167,8 @@ crossorigin="anonymous">
 			</div>
 		</div>
 		<!-- search{e} -->
+=======
+>>>>>>> jang
 
 	</div>
 </article>

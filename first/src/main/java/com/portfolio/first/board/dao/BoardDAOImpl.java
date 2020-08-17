@@ -13,7 +13,10 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.portfolio.first.board.common.Pagination;
+<<<<<<< HEAD
 import com.portfolio.first.board.common.Search;
+=======
+>>>>>>> jang
 import com.portfolio.first.board.model.BoardVO;
 
 
@@ -25,8 +28,13 @@ public class BoardDAOImpl implements BoardDAO {
 	private SqlSession sqlSession;
 
 	@Override
+<<<<<<< HEAD
 	public List<BoardVO> getBoardList(Search search) throws Exception {
 		return sqlSession.selectList("com.portfolio.first.board.boardMapper.getBoardList", search);
+=======
+	public List<BoardVO> getBoardList(Pagination pagination) throws Exception {
+		return sqlSession.selectList("com.portfolio.first.board.boardMapper.getBoardList", pagination);
+>>>>>>> jang
 	}
 
 	@Override
@@ -55,7 +63,12 @@ public class BoardDAOImpl implements BoardDAO {
 	}
 	
 	@Override
+<<<<<<< HEAD
 	public int getBoardListCnt(Search search) throws Exception {
 		return sqlSession.selectOne("com.portfolio.first.board.boardMapper.getBoardListCnt", search);
+=======
+	public int getBoardListCnt() throws Exception {
+		return sqlSession.selectOne("com.portfolio.first.board.boardMapper.getBoardListCnt");
+>>>>>>> jang
 	}
 }

@@ -14,7 +14,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.portfolio.first.board.common.Pagination;
+<<<<<<< HEAD
 import com.portfolio.first.board.common.Search;
+=======
+>>>>>>> jang
 import com.portfolio.first.board.error.controller.CommonExceptionAdvice;
 import com.portfolio.first.board.model.BoardVO;
 import com.portfolio.first.board.service.BoardService;
@@ -31,6 +34,7 @@ public class BoardController {
 	@RequestMapping(value = "/getBoardList", method = RequestMethod.GET)
 	public String getBoardList(Model model
 			, @RequestParam(required = false, defaultValue = "1") int page
+<<<<<<< HEAD
 			, @RequestParam(required = false, defaultValue = "1") int range
 			, @RequestParam(required = false, defaultValue = "title") String searchType
 			, @RequestParam(required = false) String keyword) throws Exception {
@@ -42,12 +46,22 @@ public class BoardController {
 		int listCnt = boardService.getBoardListCnt(search);
 		
 		search.pageInfo(page, range, listCnt);
+=======
+			, @RequestParam(required = false, defaultValue = "1") int range) throws Exception {
+		// 전체 게시글 개
+		int listCnt = boardService.getBoardListCnt();
+>>>>>>> jang
 		
 		// Pagination 객체 생성
 		Pagination pagination = new Pagination();
 		pagination.pageInfo(page, range, listCnt);
+<<<<<<< HEAD
 		model.addAttribute("pagination", search);
 		model.addAttribute("boardList", boardService.getBoardList(search));
+=======
+		model.addAttribute("pagination", pagination);
+		model.addAttribute("boardList", boardService.getBoardList(pagination));
+>>>>>>> jang
 		return "board/index";
 	}
 	
