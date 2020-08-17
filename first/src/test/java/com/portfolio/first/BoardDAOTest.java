@@ -52,33 +52,33 @@ public class BoardDAOTest {
 
 	
 
-	@Test 
-
-	public void testGetBoardList() throws Exception {
-
-		List<BoardVO> boardList = boardDAO.getBoardList();
-
-		logger.info("\n Board List \n ");
-
-		if(boardList.size() > 0) {
-
-			for(BoardVO list : boardList) {
-
-				logger.info(list.title);
-
-			}
-
-		} else {
-
-			logger.info("�����Ͱ� �����ϴ�.");
-
-		}
-
-	}
+//	@Test @Ignore
+//
+//	public void testGetBoardList() throws Exception {
+//
+//		List<BoardVO> boardList = boardDAO.getBoardList();
+//
+//		logger.info("\n Board List \n ");
+//
+//		if(boardList.size() > 0) {
+//
+//			for(BoardVO list : boardList) {
+//
+//				logger.info(list.title);
+//
+//			}
+//
+//		} else {
+//
+//			logger.info("�����Ͱ� �����ϴ�.");
+//
+//		}
+//
+//	}
 
 	
 
-	@Test
+	@Test @Ignore
 
 	public void testGetBoardContent() throws Exception {
 
@@ -114,48 +114,33 @@ public class BoardDAOTest {
 
 	
 
-	@Test @Ignore
-
+	@Test 
 	public void testInsertBoard() throws Exception {
-
 		BoardVO boardVO = new BoardVO();
 
-		boardVO.setCate_cd("4");
+		boardVO.setCate_cd("1");
+		boardVO.setTag("1");
+		boardVO.setReg_id("1");
+		 for( int i = 1; i < 1234 ; i++) {
+			    boardVO.setTitle(i + " 번째 게시물 입니다.");
+			    boardVO.setContent(i + " 번째 게시물 입니다.");
+			    int result = boardDAO.insertBoard(boardVO);
 
-		boardVO.setTitle("�� ��° �Խñ�");
+			logger.info("\n Insert Board Result " +result);
 
-		boardVO.setContent("�� ��° �Խñ�");
-
-		boardVO.setTag("4");
-
-		boardVO.setReg_id("4");
-
-		
-
-		int result = boardDAO.insertBoard(boardVO);
-
-		logger.info("\n Insert Board Result " +result);
-
-		if(result == 1) {
-
-			logger.info("\n �Խù� ��� ���� ");
-
-		} else {
-
-			logger.info("\n �Խù� ��� ����");
-
-		}
-
+			if(result == 1) {
+				logger.info("\n �Խù� ��� ���� ");
+			} else {
+				logger.info("\n �Խù� ��� ����");
+			}
+		 }
 	}
-
 	
-
 	@Test @Ignore 
-
 	public void testUpdateBoard() throws Exception {
 
 		BoardVO boardVO = new BoardVO();
-
+		
 		boardVO.setBid(1);
 
 		boardVO.setCate_cd("1");

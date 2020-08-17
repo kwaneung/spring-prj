@@ -12,8 +12,8 @@ import org.apache.ibatis.session.SqlSession;
 
 import org.springframework.stereotype.Repository;
 
-
-
+import com.portfolio.first.board.common.Pagination;
+import com.portfolio.first.board.common.Search;
 import com.portfolio.first.board.model.BoardVO;
 
 
@@ -25,8 +25,8 @@ public class BoardDAOImpl implements BoardDAO {
 	private SqlSession sqlSession;
 
 	@Override
-	public List<BoardVO> getBoardList() throws Exception {
-		return sqlSession.selectList("com.portfolio.first.board.boardMapper.getBoardList");
+	public List<BoardVO> getBoardList(Search search) throws Exception {
+		return sqlSession.selectList("com.portfolio.first.board.boardMapper.getBoardList", search);
 	}
 
 	@Override
@@ -52,5 +52,10 @@ public class BoardDAOImpl implements BoardDAO {
 	@Override
 	public int updateViewCnt(int bid) throws Exception {
 		return sqlSession.update("com.portfolio.first.board.boardMapper.updateViewCnt", bid);
+	}
+	
+	@Override
+	public int getBoardListCnt(Search search) throws Exception {
+		return sqlSession.selectOne("com.portfolio.first.board.boardMapper.getBoardListCnt", search);
 	}
 }
