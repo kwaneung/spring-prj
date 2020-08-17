@@ -10,12 +10,16 @@
 <meta charset="UTF-8">
 
 <title>board</title>
-
+<!-- 경로 --> 
+<c:url var="saveReplyURL" value="/restBoard/saveReply"></c:url>
+<c:url var="updateReplyURL" value="/restBoard/updateReply"></c:url>
+<c:url var="deleteReplyURL" value="/restBoard/deleteReply"></c:url>
 <script>
 	// 게시글 페이지가 열리면 자동으로 댓글 리스트 호출하는 이벤트 
 	$(document).ready(function(){
 		showReplyList();
 	});
+	
 
 	//목록으로 이동 
 	$(document).on('click', '#btnList', function(){
@@ -80,6 +84,37 @@
             }	   // Ajax success end
 		});	// Ajax end
 	}
+	
+	//댓글 저장 버튼 클릭 이벤트
+	$(document).on('click', '#btnReplySave', function(){
+		var replyContent = $('#content').val();
+		var replyReg_id = $('#reg_id').val();
+
+		var paramData = JSON.stringify({"content": replyContent
+				, "reg_id": replyReg_id
+				, "bid":'${boardContent.bid}'
+		});
+		
+		var headers = {"Content-Type" : "application/json"
+				, "X-HTTP-Method-Override" : "POST"};
+		
+		$.ajax({
+			url: "{saveReplyURL}"
+			, headers : headers
+			, data : paramData
+			, type : 'POST'
+			, dataType : 'text'
+			, success: function(result){
+				showReplyList();
+				
+				$('#content').val('');
+				$('#reg_id').val('');
+			}
+			, error: function(error){
+				console.log("에러 : " + error);
+			}
+		});
+	});
 </script>
 
 </head>
