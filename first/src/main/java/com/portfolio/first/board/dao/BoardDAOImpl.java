@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 import com.portfolio.first.board.model.BoardVO;
 import com.portfolio.first.common.Pagination;
+import com.portfolio.first.common.Search;
 
 
 @Repository
@@ -15,8 +16,8 @@ public class BoardDAOImpl implements BoardDAO {
 	private SqlSession sqlSession;
 
 	@Override
-	public List<BoardVO> getBoardList(Pagination pagination) throws Exception {
-		return sqlSession.selectList("com.portfolio.first.board.boardMapper.getBoardList", pagination);
+	public List<BoardVO> getBoardList(Search search) throws Exception {
+		return sqlSession.selectList("com.portfolio.first.board.boardMapper.getBoardList", search);
 	}
 
 	@Override
@@ -46,8 +47,8 @@ public class BoardDAOImpl implements BoardDAO {
 	
 	//총 게시글 개수 확인
 	@Override
-	public int getBoardListCnt() throws Exception {
-		return sqlSession.selectOne("com.portfolio.first.board.boardMapper.getBoardListCnt");
+	public int getBoardListCnt(Search search) throws Exception {
+		return sqlSession.selectOne("com.portfolio.first.board.boardMapper.getBoardListCnt", search);
 	}
 
 }

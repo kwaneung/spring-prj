@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.portfolio.first.board.dao.BoardDAO;
 import com.portfolio.first.board.model.BoardVO;
 import com.portfolio.first.common.Pagination;
+import com.portfolio.first.common.Search;
 import com.portfolio.first.error.controller.NotFoundException;
 
 @Service
@@ -16,8 +17,8 @@ public class BoardServiceImpl implements BoardService{
 	@Inject
 	private BoardDAO boardDAO;
 	
-	public List<BoardVO> getBoardList(Pagination pagination) throws Exception {
-		return boardDAO.getBoardList(pagination);
+	public List<BoardVO> getBoardList(Search search) throws Exception {
+		return boardDAO.getBoardList(search);
 	}
 	
 	@Override
@@ -78,8 +79,8 @@ public class BoardServiceImpl implements BoardService{
 	
 	//총 게시글 개수 확인
 	@Override
-	public int getBoardListCnt() throws Exception {
-		return boardDAO.getBoardListCnt();
+	public int getBoardListCnt(Search search) throws Exception {
+		return boardDAO.getBoardListCnt(search);
 	}
 
 }
