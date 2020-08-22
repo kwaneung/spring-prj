@@ -34,7 +34,7 @@
 
 			BID = #{bid}
 
-		ORDER BY REG_DT desc
+		ORDER BY REG_DT DESC
 
 	</select>
 
