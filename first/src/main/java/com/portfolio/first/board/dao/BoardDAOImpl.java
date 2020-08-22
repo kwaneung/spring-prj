@@ -5,6 +5,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 import com.portfolio.first.board.model.BoardVO;
+import com.portfolio.first.board.model.ReplyVO;
 import com.portfolio.first.common.Pagination;
 import com.portfolio.first.common.Search;
 
@@ -49,6 +50,46 @@ public class BoardDAOImpl implements BoardDAO {
 	@Override
 	public int getBoardListCnt(Search search) throws Exception {
 		return sqlSession.selectOne("com.portfolio.first.board.boardMapper.getBoardListCnt", search);
+	}
+	
+	// ´ñ±Û ¸®½ºÆ®
+
+	@Override
+
+	public List<ReplyVO> getReplyList(int bid) throws Exception {
+
+		return sqlSession.selectList("com.portfolio.first.board.replyMapper.getReplyList", bid);
+
+	}
+
+
+
+	@Override
+
+	public int saveReply(ReplyVO replyVO) throws Exception {
+
+		return sqlSession.insert("com.portfolio.first.board.replyMapper.saveReply", replyVO);
+
+	}
+
+
+
+	@Override
+
+	public int updateReply(ReplyVO replyVO) throws Exception {
+
+		return sqlSession.update("com.portfolio.first.board.replyMapper.updateReply", replyVO);
+
+	}
+
+
+
+	@Override
+
+	public int deleteReply(int rid) throws Exception {
+
+		return sqlSession.delete("com.portfolio.first.board.replyMapper.deleteReply", rid);
+
 	}
 
 }

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.portfolio.first.board.model.BoardVO;
+import com.portfolio.first.board.model.ReplyVO;
 import com.portfolio.first.board.service.BoardService;
 import com.portfolio.first.common.Pagination;
 import com.portfolio.first.common.Search;
@@ -68,6 +69,7 @@ public class BoardController {
 	@RequestMapping(value = "/getBoardContent", method = RequestMethod.GET)
 	public String getBoardContent(Model model, @RequestParam("bid") int bid) throws Exception {
 		model.addAttribute("boardContent", boardService.getBoardContent(bid));
+		model.addAttribute("replyVO", new ReplyVO());
 		return "board/boardContent";
 	}
 	
