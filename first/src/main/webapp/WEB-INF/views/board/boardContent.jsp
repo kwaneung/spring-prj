@@ -99,7 +99,11 @@
 				, "X-HTTP-Method-Override" : "POST"};
 		
 		$.ajax({
+<<<<<<< HEAD
 			url: "${saveReplyURL}"
+=======
+			url: "{saveReplyURL}"
+>>>>>>> jang
 			, headers : headers
 			, data : paramData
 			, type : 'POST'
@@ -115,6 +119,7 @@
 			}
 		});
 	});
+<<<<<<< HEAD
 	
 	// 댓글 수정 폼 이벤트 
 	function fn_editReply(rid, reg_id, content){
@@ -188,6 +193,8 @@
 		});
 	}
 
+=======
+>>>>>>> jang
 </script>
 
 </head>
