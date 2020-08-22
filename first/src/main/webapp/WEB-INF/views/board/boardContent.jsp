@@ -99,11 +99,15 @@
 				, "X-HTTP-Method-Override" : "POST"};
 		
 		$.ajax({
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 			url: "${saveReplyURL}"
 =======
 			url: "{saveReplyURL}"
 >>>>>>> jang
+=======
+			url: "${saveReplyURL}"
+>>>>>>> Stashed changes
 			, headers : headers
 			, data : paramData
 			, type : 'POST'
@@ -119,7 +123,10 @@
 			}
 		});
 	});
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 	
 	// 댓글 수정 폼 이벤트 
 	function fn_editReply(rid, reg_id, content){
@@ -193,8 +200,11 @@
 		});
 	}
 
+<<<<<<< Updated upstream
 =======
 >>>>>>> jang
+=======
+>>>>>>> Stashed changes
 </script>
 
 </head>
