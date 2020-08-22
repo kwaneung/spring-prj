@@ -44,7 +44,6 @@ public class RestBoardController {
 		}
 		return result;
 	}
-<<<<<<< HEAD
 	
 	@RequestMapping(value="/updateReply", method= RequestMethod.POST)
 	public Map<String, Object> updateReply(@RequestBody ReplyVO replyVO) throws Exception {
@@ -72,6 +71,4 @@ public class RestBoardController {
 		}
 		return result;
 	}
-=======
->>>>>>> jang
 }
