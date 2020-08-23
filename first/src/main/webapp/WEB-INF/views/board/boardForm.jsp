@@ -13,6 +13,8 @@
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
+<script src="https://cdn.ckeditor.com/ckeditor5/21.0.0/classic/ckeditor.js"></script>
+
 <title>board</title>
 
 <script>
@@ -85,4 +87,6 @@ body {
 		</div>
 	</article>
 </body>
+<script src="${pageContext.request.contextPath}/resources/common/js/ckeditor.js"></script>
+
 </html>

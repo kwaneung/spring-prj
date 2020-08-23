@@ -52,29 +52,29 @@ public class BoardDAOTest {
 
 	
 
-	@Test @Ignore
-
-	public void testGetBoardList() throws Exception {
-
-		List<BoardVO> boardList = boardDAO.getBoardList();
-
-		logger.info("\n Board List \n ");
-
-		if(boardList.size() > 0) {
-
-			for(BoardVO list : boardList) {
-
-				logger.info(list.title);
-
-			}
-
-		} else {
-
-			logger.info("데이터가 없습니다.");
-
-		}
-
-	}
+//	@Test @Ignore
+//
+//	public void testGetBoardList() throws Exception {
+//
+//		List<BoardVO> boardList = boardDAO.getBoardList();
+//
+//		logger.info("\n Board List \n ");
+//
+//		if(boardList.size() > 0) {
+//
+//			for(BoardVO list : boardList) {
+//
+//				logger.info(list.title);
+//
+//			}
+//
+//		} else {
+//
+//			logger.info("데이터가 없습니다.");
+//
+//		}
+//
+//	}
 
 	
 

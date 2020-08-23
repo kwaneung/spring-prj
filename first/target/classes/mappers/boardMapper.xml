@@ -10,6 +10,7 @@
 			BID, CATE_CD, TITLE, CONTENT, TAG, VIEW_CNT, REG_ID, REG_DT, EDIT_DT
 		FROM
 			TBL_BOARD
+		ORDER BY REG_DT DESC
 		<trim prefix="WHERE" prefixOverrides="AND|OR">
 			<if test="searchType=='title' and keyword != null and keyword != '' ">
 				AND TITLE like CONCAT('%', #{keyword}, '%')
