@@ -25,12 +25,6 @@ crossorigin="anonymous">
 </c:url>
 
 <title>board</title>
-<style>
-	body {	
-		padding-top: 70px;
-		padding-bottom: 30px;
-	}
-</style>
 <script>
 	$(document).on('click', '#btnWriteForm', function(e){
 		e.preventDefault();
